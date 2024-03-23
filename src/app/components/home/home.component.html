@@ -1,0 +1,52 @@
+<div class="bg app-font">
+<div class="container app-font">
+  <h4 class="text-success app-font">Greetings!</h4>
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="welcome">Welcome!</h2>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-lg-12">
+            <button class="btn btn-warning newCar btn-block" routerLink="/add-artist">Add Artist</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-center text-primary">All Artist</h1>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label for="email">Search Artist</label>
+          <input type="text" class="form-control form-input" placeholder="Enter Artist ID to search" (keyup)="Search($event)">
+      </div>
+      </div>
+    </div>
+    <ng-container *ngIf="Artists.length > 0">
+      <div class='row border' *ngFor="let element of Artists;let i = index">
+        <div class='col-lg-12 col-md-12 col-sm-12'>
+          <h4 class='text-light f-9'>Sr No: <span class='contents text-primary'>{{i+1}}</span></h4>
+          <h4 class='text-light f-9'>Artist ID: <span class='contents text-primary'>{{element.artist_ID}}</span></h4>
+          <h4 class='text-light f-9'>Artist Name: <span class='contents text-primary'>{{element.name}}</span></h4>
+          <h4 class='text-light f-9'>Artist DOB: <span class='contents text-primary'>{{element.DOB | date:'longDate'}}</span></h4>
+          <h4 class='text-light f-9'>Gender: <span class='contents text-primary'>{{element.gender}}</span></h4>
+          <h4 class='text-light f-9'>Artwork Type: <span class='contents text-primary'>{{element.artwork_type}}</span></h4>
+          <h4 class='text-light f-9'>Contact Info: <span class='contents text-primary'>{{element.contact_info}}</span></h4>
+          <h4 class='text-light f-9'>Exibition Date: <span class='contents text-primary'>{{element.exibition_date | date:'short'}}</span></h4>
+          <h4 class='text-light f-9'>Special Note: <span class='contents text-primary'>{{element.special_note}}</span></h4>
+          <button class="btn btn-danger btn-style" (click)="delete(element)">Delete</button>
+          &nbsp;
+          <button class="btn btn-info btn-style" (click)="goToUpdate(element)">Update</button>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="Artists.length === 0">
+      <h4 class='text-light f-9 text-center'>{{'No Artist yet. Please add new!'}}</h4>
+    </ng-container>
+
+</div>
+
+</div>

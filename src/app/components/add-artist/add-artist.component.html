@@ -1,0 +1,66 @@
+<div class="bg app-font">
+    <div class="container app-font">
+        <h1 class="text-center text-info">Add new Artist!</h1>
+       <div class="row">
+        <div class="col-lg-12 col-sm-12 col-md-12">
+            <p class="text-warning">Please type all below fileds to add your new Artist!</p>
+            <form [formGroup]="ArtistForm">
+              <div class="form-group">
+                <label for="email">Artist ID (Unique)</label>
+                <input type="text" class="form-control form-input" placeholder="Enter Artist ID" name="artist_ID" formControlName="artist_ID">
+                <div *ngIf="ArtistForm.get('artist_ID').invalid && (ArtistForm.get('artist_ID').dirty || ArtistForm.get('artist_ID').touched)">
+                    <p class="ng-message">Artist ID is required</p>
+                </div> 
+            </div>
+              <div class="form-group">
+                <label for="Model">Artist Name:</label>
+                <input type="text" class="form-control form-input" placeholder="Enter Artist name" name="name" formControlName="name">
+              </div>
+              <div class="form-group">
+                <label for="price">Artist DOB:</label>
+                <input type="date" class="form-control form-input" placeholder="Enter price" name="DOB" formControlName="DOB">
+              </div>
+              <div class="form-group">
+                <label for="sel1">Gender:</label>
+                <select class="form-control form-input" formControlName="gender">
+                  <option value="" selected>Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Unspecified">Unspecified</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="sel1">Art work Type:</label>
+                <select class="form-control form-input" formControlName="artwork_type">
+                  <option value="" selected>Select Artwork</option>
+                  <option value="Painting">Painting</option>
+                  <option value="Sculpture">Sculpture</option>
+                  <option value="Photograph">Photograph</option>
+                  
+                  <option value="Video art">Video art</option>
+                  <option value="Digital art">Digital art</option>
+                  <option value="Printmaking">Printmaking</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="color">Contact Info:</label>
+                <input type="tel" class="form-control form-input" placeholder="Contact info..." name="contact_info" formControlName="contact_info">
+              </div>
+              
+              <div class="form-group">
+                <label for="color">Exibition Date:</label>
+                <input type="datetime-local" class="form-control form-input" placeholder="Contact info..." name="exibition_date" formControlName="exibition_date">
+              </div>
+              <div class="form-group">
+                <label for="color">Special Notes:</label>
+                <input type="text" class="form-control form-input" placeholder="Special notes..." name="special_note" formControlName="special_note">
+              </div>
+              <button type="submit" class="btn btn-info btn-block" [disabled]="!ArtistForm.valid" (click)="AddArtist()"> {{id == '' ? 'Add Artist' : 'Update Artist'}} </button>
+            <br>
+            <br>
+            </form>
+        </div>
+       </div>
+      </div>
+      
+</div>
