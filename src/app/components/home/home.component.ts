@@ -20,9 +20,9 @@ export class HomeComponent implements OnInit {
     private router:Router,
     private AppSr:AppService,
   ) {
-    console.log(this.AppSr.ArtistArray)
-    this.Artists = this.AppSr.ArtistArray;
-    this.ArtistSearch = this.AppSr.ArtistArray;
+    console.log(this.AppSr.getArtists())
+    this.Artists = this.AppSr.getArtists();
+    this.ArtistSearch = this.AppSr.getArtists();
    }
 
   ngOnInit(): void {

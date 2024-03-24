@@ -5,9 +5,23 @@ import { Artist } from './models';
   providedIn: 'root'
 })
 export class AppService {
-  ArtistArray:any=[];
+  ArtistArray:Artist[]=[];
 
-  constructor() {}
+  constructor() {
+    let artistDummy:Artist= {
+      artist_ID:"1",
+      name:"Johan walker",
+      DOB:String(new Date("11/10/1996")),
+      gender:"Male",
+      artwork_type:"Painting",
+      contact_info:"123456789",
+      exibition_date:String(new Date()),
+      special_note:"He is a good Artist.",
+      updatedAt:String(new Date()),
+      createdAt:String(new Date()),
+    }
+    this.AddArtist(artistDummy)
+  }
 
   AddArtist(artitst:Artist){
     this.ArtistArray.push(artitst);

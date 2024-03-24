@@ -37,7 +37,7 @@ export class AddArtistComponent implements OnInit {
       special_note: ["", []],
   });
   if(this.id){
-    let checkId = this.AppSr.ArtistArray?.filter((d:any)=> d.artist_ID == this.id);
+    let checkId = this.AppSr.getArtists()?.filter((d:any)=> d.artist_ID == this.id);
     let artistData = checkId[0]
     this.ArtistForm.get('artist_ID').setValue(artistData['artist_ID']);
     this.ArtistForm.get('name').setValue(artistData['name']);
@@ -70,7 +70,7 @@ export class AddArtistComponent implements OnInit {
         this.toastMsg.SuccessMessage("Artist has been Updated successfully!","Artist Updated");
         this.router.navigate(["/"])
       }else{
-        let checkId = this.AppSr.ArtistArray?.filter((d:any)=> d.artist_ID == artist.artist_ID);
+        let checkId = this.AppSr.getArtists()?.filter((d:any)=> d.artist_ID == artist.artist_ID);
         if(checkId?.length > 0){
           this.toastMsg.ErrorMessage("This artist ID already exists. Please try another ID.","ID already exists");
         }else{
