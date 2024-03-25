@@ -1,0 +1,46 @@
+.newCar{
+    margin: 10px 0;
+    height: 50px;
+    border-radius: 30px;
+}
+.image-div{
+    height: 500px;
+    width: 100%;
+    .car-img{
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+    }
+}
+.image{
+    height: 230px;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+}
+.border{
+    border: 2px solid rgba(67, 87, 191, 0.5);
+    box-shadow: 0px 6px 8px rgba(111, 156, 214, 0.45);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 30px auto;
+    background: linear-gradient(45deg, gray, transparent);
+}
+.contents{
+font-size: 16px;
+font-weight: 600;
+}
+.f-9{
+    font-weight: 900;
+}
+.btn-style{
+    width: 130px;
+    height: 40px;
+    border-radius: 30px;
+}
+.welcome{
+    color: #F7685B;
+}
+.inform{
+    color:#24B064;
+}
